@@ -1,23 +1,30 @@
 var questions = [
     {
-      title: "Commonly used data types DO NOT include:",
-      choices: ["strings", "booleans", "alerts", "numbers"],
-      answer: "alerts"
+      title: "The greater than/or equal operator is: ",
+      choices: [">>", "<=", "+=", ">="],
+      answer: ">="
     },
     {
-      title: "The condition in an if / else statement is enclosed within ____.",
-      choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-      answer: "parentheses"
+      title: "DOM is an abreviation for ____",
+      choices: ["Data Object Mode", "Dumb Old Man", "Document Object Model", "Dutle Opo Mipsy"],
+      answer: "Document Object Model"
     },
    {
-
-    title: "What does HTML stands for?",
-    choices: ['hyper Text Markup Language',
-     'hyperlinks and Text Markup Language',
-     'Home Tool Markup Language',
-    'Hyena Thinks of Making Lunch'],
-    answer: 'hyper Text Markup Language'
+    title: "Arrays in JavaScript can be used to store:",
+    choices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
+    answer: "all of the above"
    },
+   {
+    title: "Terminates the current loop and goes to the statement following the current statement: ",
+    choices: ["break", "continue", "stop", "woot" ],
+    answer: "break"
+   },
+   {
+    title: "Javascript was invented in the year:",
+    choices: ["2005", "2015", "1995", "2020"],
+    answer: "1995"
+   },
+
   
     ///etc.
   ];
