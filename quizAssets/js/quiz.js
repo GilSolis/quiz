@@ -1,18 +1,14 @@
 var startDiv = document.getElementById("startScreen");
 var gameDiv = document.getElementById("quizBox");
-
 var questionTitle = document.getElementById("question");
-
 var choices = document.getElementsByClassName('choice');
-
 var highScore = document.getElementById('highScores');
-
 var yourScore = document.getElementById('yourscore');
-
 var displayScore = document.getElementById('displayscore');
 var submit = document.getElementById('submit1');
 var timerSpan = document.getElementById("timerSpan");
 var timer = document.getElementById("timer");
+var finalScore = score + counter;
 
 
 function playJeopardy(){
@@ -36,12 +32,9 @@ for (var choice of choices) {
 }
 
 var qIndex = 0;
-
 var score = 0;
 var counter;
-
 var timer = document.getElementById('timer');
-
 startDiv.onclick = start;
 
 
@@ -68,75 +61,61 @@ function countDown(){
     counter = counter - 1 ;
     if ( counter < 76) { 
         timer.innerHTML = counter;
-
     }
     if ( counter < 1){
         window.clearInterval(update);
-   quizEnd(); 
+        quizEnd(); 
+    }
 }
-}
- update = setInterval('countDown()', 1000);
-
+update = setInterval('countDown()', 1000);
 
 function displayQuestion() {
-
     questionTitle.innerText = questions[qIndex].title
-    for (var i in choices) {
+      for (var i in choices) {
         choices[i].innerText = questions[qIndex].choices[i]
      }
+}     
     
-     }
-     
-    function viewhighscore(){
+function viewhighscore(){
         window.location.replace('./highscores.html');
-     }
+}
 
 submit.onclick = submitScore;
 
+// var finalScore = score + counter;
 function submitScore(){
-    var initials = document.getElementById('initials');
-   
-     
-    localStorage.setItem(initials.value, score);
+    var initials = document.getElementById('initials');     
+    localStorage.setItem(initials.value, score + counter);
      console.log(localStorage);
      //var highscore = localStorage.getItem('score');
      viewhighscore();
 }
-
    
-
-    
 
 function checkAnswer() {
   if ( this.innerText == questions[qIndex].answer){
     playairHorn()
-     document.getElementById('correct').innerHTML = 'correct';
+    document.getElementById('correct').innerHTML = 'correct';
     setTimeout(function(){ document.getElementById('correct').innerHTML = ''}, 1000);
-      score +=10;
-      console.log(score);
+    score +=10;
+    // console.log(score);
   }else{
     playSadTrombone()
+    counter -=15;
     document.getElementById('wrong').innerHTML = 'wrong';
     setTimeout(function(){ document.getElementById('wrong').innerHTML = ''}, 1000);
-     counter -=15;
-     
   }
 
-
-
-
-
-    qIndex++;
+ qIndex++;
     
-    if (qIndex < questions.length){
-        displayQuestion();
-    
-    }else{
-        quizEnd();
-        timerSpan.classList.add('hide');
-        timer.classList.add('hide');
-
-
+if (qIndex < questions.length){
+    displayQuestion();
+}
+else{
+    quizEnd();
+    clearInterval(update);
+    // timerSpan.classList.add('hide');
+    // timer.classList.add('hide');
     }
     
 }
