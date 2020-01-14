@@ -95,15 +95,15 @@ function submitScore(){
 function checkAnswer() {
   if ( this.innerText == questions[qIndex].answer){
     playairHorn()
-    document.getElementById('correct').innerHTML = 'correct';
-    setTimeout(function(){ document.getElementById('correct').innerHTML = ''}, 1000);
+    document.getElementById('rightOrWrong').innerHTML = 'correct';
+    setTimeout(function(){ document.getElementById('rightOrWrong').innerHTML = ''}, 1000);
     score +=10;
     // console.log(score);
   }else{
     playSadTrombone()
     counter -=15;
-    document.getElementById('wrong').innerHTML = 'wrong';
-    setTimeout(function(){ document.getElementById('wrong').innerHTML = ''}, 1000);
+    document.getElementById('rightOrWrong').innerHTML = 'wrong';
+    setTimeout(function(){ document.getElementById('rightOrWrong').innerHTML = ''}, 1000);
   }
 
  qIndex++;

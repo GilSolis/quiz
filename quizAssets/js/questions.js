@@ -6,7 +6,7 @@ var questions = [
     },
     {
       title: "DOM is an abreviation for ____",
-      choices: ["Data Object Mode", "Dumb Old Man", "Document Object Model", "Dutle Opo Mipsy"],
+      choices: ["Data Object Mode", "Dumb Old Man", "Document Object Model", "Document Order Mode"],
       answer: "Document Object Model"
     },
    {
