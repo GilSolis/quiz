@@ -1,3 +1,4 @@
+// setting variables
 var startDiv = document.getElementById("startScreen");
 var gameDiv = document.getElementById("quizBox");
 var questionTitle = document.getElementById("question");
@@ -10,7 +11,7 @@ var timerSpan = document.getElementById("timerSpan");
 var timer = document.getElementById("timer");
 var finalScore = score + counter;
 
-
+// Sound effects
 function playJeopardy(){
     var jeopardy = document.getElementById('jeopardy');
     jeopardy.play();
@@ -37,7 +38,7 @@ var counter;
 var timer = document.getElementById('timer');
 startDiv.onclick = start;
 
-
+// starts the quiz
 function start() {
     // playJeopardy();
     counter = 76;
@@ -49,6 +50,7 @@ function start() {
     countDown();
 }
 
+//ends quiz
 function quizEnd(){
     gameDiv.classList.add('hide');
     yourScore.classList.remove('hide');
@@ -56,7 +58,7 @@ function quizEnd(){
     displayScore.innerHTML = score + counter;
     }
 
-
+//timer function
 function countDown(){
     counter = counter - 1 ;
     if ( counter < 76) { 
@@ -68,6 +70,7 @@ function countDown(){
     }
 }
 update = setInterval('countDown()', 1000);
+
 
 function displayQuestion() {
     questionTitle.innerText = questions[qIndex].title
@@ -82,13 +85,10 @@ function viewhighscore(){
 
 submit.onclick = submitScore;
 
-// var finalScore = score + counter;
 function submitScore(){
     var initials = document.getElementById('initials');     
     localStorage.setItem(initials.value, score + counter);
-     console.log(localStorage);
-     //var highscore = localStorage.getItem('score');
-     viewhighscore();
+    viewhighscore();
 }
    
 
@@ -98,24 +98,20 @@ function checkAnswer() {
     document.getElementById('rightOrWrong').innerHTML = 'correct';
     setTimeout(function(){ document.getElementById('rightOrWrong').innerHTML = ''}, 1000);
     score +=10;
-    // console.log(score);
-  }else{
+    }
+    else{
     playSadTrombone()
     counter -=15;
     document.getElementById('rightOrWrong').innerHTML = 'wrong';
     setTimeout(function(){ document.getElementById('rightOrWrong').innerHTML = ''}, 1000);
   }
-
  qIndex++;
-    
-if (qIndex < questions.length){
-    displayQuestion();
-}
-else{
-    quizEnd();
-    clearInterval(update);
-    // timerSpan.classList.add('hide');
-    // timer.classList.add('hide');
+    if (qIndex < questions.length){
+        displayQuestion();
+    }
+    else{
+        quizEnd();
+        clearInterval(update);
     }
     
 }

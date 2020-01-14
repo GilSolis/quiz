@@ -25,7 +25,8 @@ h1{
     margin-left: 25%;
   }
 
-#quizBox, #startScreen, #yourscore {
+/*main boxes styling*/
+#quizBox, #startScreen, #yourscore, #highScores {
     display: flexbox;
     background-color: MediumTurquoise ;
     padding: 5%;
@@ -33,20 +34,17 @@ h1{
     border: 5px solid olive;
     text-align: left;
 }
-
-#startQuiz, #submit1, .choice, #highScores {
+/* Button styling */
+#startQuiz, #submit1, .choice, #back, #clear  {
     border-color: olive ;
     padding: 3px 12px;
     background-color: white;
     /* margin-top: 5%; */
 }
-/* #initials {
-    padding-bottom: 2px;    
-} */
+/**/
 
 #timerSpan {
-    margin-left: auto;
-   
+    margin-left: auto;   
 }
 
 #submit1 {

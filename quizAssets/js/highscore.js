@@ -8,6 +8,7 @@ function clearscore(){
 $(document).ready(function(){
 
     addhighscore();
+    
 
 });
  function addhighscore(){
@@ -17,4 +18,7 @@ $(document).ready(function(){
         $("#highscoreslist").append('<li>'+  initials+ ' : ' + curscore + '</li>');
         //$('body').append(localStorage.getItem(localStorage.key(i)));
     }
- }
+ };
+
+
+
