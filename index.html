@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="./quizAssets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <nav id="header">
+        <a href="./highscores.html" id="viewHighscores">View Highscores</a>
+        <h1>Javascript Quiz</h1>
+        <span id="timerSpan" class="hide">Timeleft: <span id="timer" class="hide">0</span></span>
+    </nav>
+
+    <div id="startScreen">
+        <h2>Start Quiz</h2>
+        <button id="startQuiz">Start</button>
+    </div>
+
+    <div id="quizBox" class="hide">
+        <h2 id="question">Question goes here!</h2>
+        <button class="choice">Some Choice</button>
+        <button class="choice">Some Choice</button>
+        <button class="choice">Some Choice</button>
+        <button class="choice">Some Choice</button>
+    </div>
+    
+    <div id="rightOrWrong" >       
+    </div>
+
+    <div id="yourscore" class="hide">
+        <h2>Your score</h2>
+        <div id="displayscore"></div>
+        <p>Submit Initials to save score</p>
+        Initials: <input id='initials' type="text" name="LastName" value=""><br>
+        <button id='submit1' value="Submit"> Submit</button>
+    
+    </div>
+    <script src="./quizAssets/js/questions.js"></script>
+    <script src="./quizAssets/js/quiz.js"></script>
+
+    <audio id="jeopardy" src="quizAssets/js/Jeopardy-theme-song.mp3" ></audio> 
+    <audio id="sadTrombone" src="quizAssets/js/SadTrombone.mp3" ></audio>
+    <audio id="airHorn" src="quizAssets/js/mlg-airhorn.mp3" ></audio>
+
+    
+</body>
+</html>
